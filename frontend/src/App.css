@@ -1,0 +1,514 @@
+/* =========================
+   THEME VARIABLES
+========================= */
+
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --input: #ffffff;
+  --border: #d1d5db;
+  --secondary-text: #475569;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #ffffff;
+  --input: #0b1120;
+  --border: #334155;
+  --secondary-text: #cbd5e1;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   THEME TOGGLE
+========================= */
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  width: 50px;
+  height: 50px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: var(--card);
+  color: var(--text);
+
+  cursor: pointer;
+
+  font-size: 20px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  z-index: 999;
+}
+
+/* =========================
+   AUTH PAGES
+========================= */
+
+.auth-container {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 450px;
+
+  background: var(--card);
+
+  padding: 40px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+
+  transition: all 0.3s ease;
+}
+
+.auth-card h1 {
+  text-align: center;
+  font-size: 2.7rem;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.auth-card p {
+  text-align: center;
+  color: var(--secondary-text);
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.auth-card input {
+  width: 100%;
+
+  padding: 14px;
+
+  margin-bottom: 15px;
+
+  border-radius: 10px;
+  border: 1px solid var(--border);
+
+  background: var(--input);
+  color: var(--text);
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+.auth-card input:focus {
+  border-color: #3b82f6;
+
+  transform: scale(1.02);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(59, 130, 246, 0.15);
+}
+
+.auth-card button {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #3b82f6;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.auth-card button:hover {
+  background: #2563eb;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.auth-link a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+  min-height: 100vh;
+
+  max-width: 1300px;
+  margin: auto;
+
+  padding: 30px;
+}
+
+.navbar {
+  background: var(--card);
+
+  padding: 20px 30px;
+
+  border-radius: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.navbar h2 {
+  font-size: 28px;
+  color: #3b82f6;
+  font-weight: 700;
+}
+
+.logout-btn {
+  background: #ef4444;
+  color: white;
+
+  border: none;
+
+  padding: 10px 18px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+/* =========================
+   WELCOME SECTION
+========================= */
+
+.welcome-section {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.welcome-section h1 {
+  font-size: 3rem;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.welcome-section p {
+  max-width: 850px;
+
+  margin: auto;
+
+  font-size: 18px;
+  line-height: 1.8;
+
+  color: var(--secondary-text);
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card-container {
+  margin-top: 60px;
+
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  );
+
+  gap: 25px;
+}
+
+.card {
+  background: var(--card);
+
+  min-height: 220px;
+
+  padding: 25px;
+
+  border-radius: 18px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform:
+    translateY(-10px)
+    scale(1.03);
+
+  border: 1px solid #3b82f6;
+
+  box-shadow:
+    0 15px 30px
+    rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: var(--secondary-text);
+  line-height: 1.7;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .dashboard {
+    padding: 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .welcome-section {
+    margin-top: 40px;
+  }
+
+  .welcome-section h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-section p {
+    font-size: 16px;
+  }
+
+  .auth-card {
+    padding: 30px 25px;
+  }
+
+  .auth-card h1 {
+    font-size: 2rem;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #3b82f6;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+.auth-container,
+.dashboard,
+.upload-page {
+  animation: pageFade 0.6s ease;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-card,
+.upload-card {
+  animation: cardPop 0.5s ease;
+}
+
+@keyframes cardPop {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.navbar {
+  animation: navbarDrop 0.6s ease;
+}
+
+@keyframes navbarDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-section h1 {
+  animation: titleSlide 0.8s ease;
+}
+
+@keyframes titleSlide {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: cardFade 0.8s ease both;
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes cardFade {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-card button,
+.logout-btn,
+.upload-card button {
+  transition: all 0.3s ease;
+}
+
+.auth-card button:hover,
+.logout-btn:hover,
+.upload-card button:hover {
+  transform: translateY(-3px);
+}
+
+.user-avatar {
+  transition: all 0.3s ease;
+}
+
+.user-avatar:hover {
+  transform: scale(1.1);
+}
