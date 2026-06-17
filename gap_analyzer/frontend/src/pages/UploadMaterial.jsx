@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 
 function UploadMaterial() {
+
+  const navigate = useNavigate();
 
   const [file, setFile] = useState(null);
 
@@ -26,7 +29,11 @@ function UploadMaterial() {
         formData
       );
 
-      alert(response.data.message);
+      console.log(response.data);
+
+      navigate(
+        `/analysis/${response.data.file_id}`
+      );
 
     } catch (error) {
 
@@ -45,17 +52,22 @@ function UploadMaterial() {
         <h1>Upload Material</h1>
 
         <p>
-          Upload PDF, PPT, DOCX or Notes
+          Upload a PDF file for analysis
         </p>
 
         <input
           type="file"
+          accept="application/pdf"
           onChange={(e) =>
-            setFile(e.target.files[0])
+            setFile(
+              e.target.files[0]
+            )
           }
         />
 
-        <button onClick={handleUpload}>
+        <button
+          onClick={handleUpload}
+        >
           Upload
         </button>
 

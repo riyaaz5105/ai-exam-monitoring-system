@@ -1,16 +1,33 @@
-# React + Vite
+# SkillBridge AI Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This frontend is the React + Vite client for the SkillBridge AI learning gap analyzer.
 
-Currently, two official plugins are available:
+It provides:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- login and registration screens
+- a welcome dashboard
+- a file upload page for study materials
+- Axios API calls to a FastAPI backend
 
-## React Compiler
+## Run locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+cd gap_analyzer/frontend
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+The app uses `http://127.0.0.1:8000/api` as the backend base URL in `src/services/api.js`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Pages
+
+- `Login.jsx` — user sign-in and JWT token storage
+- `Register.jsx` — create a new account
+- `Dashboard.jsx` — welcome page with navigation
+- `UploadMaterial.jsx` — upload study materials to the backend
+
+## Notes
+
+- The frontend stores the JWT token and user profile in `localStorage`.
+- The upload page posts files to `/api/material/upload`.
+- If your backend runs on a different host or port, update `frontend/src/services/api.js`.

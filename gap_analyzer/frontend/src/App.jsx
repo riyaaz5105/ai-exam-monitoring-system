@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import UploadMaterial from "./pages/UploadMaterial";
+import Analysis from "./pages/Analysis";
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/upload" element={<UploadMaterial />} />
+          <Route path="/analysis/:fileId" element={<Analysis />}/>
         </Routes>
       </BrowserRouter>
     </>

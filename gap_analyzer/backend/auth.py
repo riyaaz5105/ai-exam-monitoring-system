@@ -8,6 +8,10 @@ import bcrypt
 
 router = APIRouter()
 
+JWT_SECRET = os.getenv("JWT_SECRET")
+if not JWT_SECRET:
+    raise RuntimeError("JWT_SECRET must be set in environment variables")
+
 @router.post("/register")
 def register(user: RegisterUser):
 
@@ -62,11 +66,9 @@ def login(user: LoginUser):
             detail="Invalid Credentials"
         )
 
-    # print("JWT_SECRET =", os.getenv("JWT_SECRET"))
-
     token = jwt.encode(
         {"email": db_user["email"]},
-        os.getenv("JWT_SECRET"),
+        JWT_SECRET,
         algorithm="HS256"
     )
 

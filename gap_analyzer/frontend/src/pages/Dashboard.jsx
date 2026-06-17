@@ -5,7 +5,7 @@ function Dashboard() {
   const navigate = useNavigate();
 
   const user = JSON.parse(
-    localStorage.getItem("user")
+    localStorage.getItem("user") || "null"
   );
 
   const hour = new Date().getHours();
@@ -33,7 +33,7 @@ function Dashboard() {
         <div className="nav-right">
 
           <div className="user-avatar">
-            {user?.name?.charAt(0).toUpperCase()}
+            {user?.name?.charAt(0)?.toUpperCase() || "U"}
           </div>
 
           <button
@@ -50,7 +50,7 @@ function Dashboard() {
       <div className="welcome-section">
 
         <h1>
-          {greeting}, {user?.name} 👋
+          {greeting}, {user?.name || "User"} 👋
         </h1>
 
         <p>
